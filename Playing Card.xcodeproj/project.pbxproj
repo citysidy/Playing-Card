@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE229133221B5C79001B5D80 /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE229132221B5C79001B5D80 /* PlayingCardView.swift */; };
 		DEDAAFF921FFE21900F927F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAAFF821FFE21900F927F6 /* AppDelegate.swift */; };
 		DEDAAFFB21FFE21900F927F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAAFFA21FFE21900F927F6 /* ViewController.swift */; };
 		DEDAAFFE21FFE21900F927F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDAAFFC21FFE21900F927F6 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE229132221B5C79001B5D80 /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		DEDAAFF521FFE21900F927F6 /* Playing Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Playing Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDAAFF821FFE21900F927F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEDAAFFA21FFE21900F927F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		DEDAB0102201296700F927F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE229132221B5C79001B5D80 /* PlayingCardView.swift */,
 				DEDAAFFC21FFE21900F927F6 /* Main.storyboard */,
 			);
 			path = View;
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDAAFFB21FFE21900F927F6 /* ViewController.swift in Sources */,
+				DE229133221B5C79001B5D80 /* PlayingCardView.swift in Sources */,
 				DEE4BC3E22020B19009C49F1 /* PlayingCardStack.swift in Sources */,
 				DEDAB00E2200996B00F927F6 /* PlayingCardDeck.swift in Sources */,
 				DEDAB00C21FFE24400F927F6 /* PlayingCard.swift in Sources */,

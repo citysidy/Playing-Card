@@ -14,12 +14,12 @@ struct PlayingCardStack {
     /***************************************************************/
     
     var cards = [PlayingCard]()
-    var count: Int {
-        return cards.count
+    var countLessOne: Int {
+        return cards.count - 1
     }
     
     var topCard: PlayingCard? {
-        if count > 0 {
+        if countLessOne >= 0 {
             return cards.last
         } else {return nil}
     }
@@ -28,15 +28,15 @@ struct PlayingCardStack {
     /***************************************************************/
     
     mutating func drawTopCard() -> PlayingCard? {
-        if count < 1 {return nil} else {
-            cards[count.lessOne].isFaceUp = false
-            return cards.remove(at: count.lessOne)
+        if countLessOne < 1 {return nil} else {
+            cards[countLessOne].isFaceUp = false
+            return cards.remove(at: countLessOne)
         }
     }
     
     mutating func showTopCard() -> String? {
-        if count < 1  {return nil} else {
-            cards[count.lessOne].isFaceUp = true
+        if countLessOne < 1  {return nil} else {
+            cards[countLessOne].isFaceUp = true
             return cards.last!.description
         }
     }
