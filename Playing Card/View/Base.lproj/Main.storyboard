@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Playing_Card" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bogomil-mihaylov-643388-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="5CO-81-B1u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-UT-2eB">
+                                <rect key="frame" x="52.5" y="252.5" width="270" height="162"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewe-Za-xyd">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="162"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="dqg-8y-iSV"/>
+                                            <constraint firstAttribute="height" constant="162" id="rzl-Vv-2rN"/>
+                                        </constraints>
+                                        <state key="normal" title="deal"/>
+                                        <connections>
+                                            <action selector="cardTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fj1-Fn-vr6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvw-VQ-weD">
+                                        <rect key="frame" x="170" y="0.0" width="100" height="162"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="162" id="Ctk-5s-Gd3"/>
+                                            <constraint firstAttribute="width" constant="100" id="G07-as-e90"/>
+                                        </constraints>
+                                        <state key="normal" title="draw"/>
+                                        <connections>
+                                            <action selector="cardTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Pz-jp-SNh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-Gx-a6h">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EdT-Gx-a6h" secondAttribute="bottom" constant="20" id="4mI-vc-YQo"/>
+                            <constraint firstItem="5CO-81-B1u" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4so-Mu-z5a"/>
+                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5en-TU-2G3"/>
+                            <constraint firstItem="5CO-81-B1u" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B6a-Ge-S5k"/>
+                            <constraint firstItem="5CO-81-B1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LAP-5u-WIN"/>
+                            <constraint firstItem="fRI-UT-2eB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UTn-53-thy"/>
+                            <constraint firstItem="5CO-81-B1u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cwt-6B-y68"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EdT-Gx-a6h" secondAttribute="trailing" constant="16" id="iSB-de-7bP"/>
+                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n4p-cn-zrB"/>
+                            <constraint firstItem="fRI-UT-2eB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="of2-Fo-6RW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="cardView" destination="Ewe-Za-xyd" collectionClass="NSMutableArray" id="2aX-cZ-RnV"/>
+                        <outletCollection property="cardView" destination="Zvw-VQ-weD" collectionClass="NSMutableArray" id="SMF-fY-gsf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bogomil-mihaylov-643388-unsplash" width="1124" height="1686"/>
+    </resources>
+</document>
