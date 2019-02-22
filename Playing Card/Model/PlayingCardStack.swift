@@ -29,14 +29,12 @@ struct PlayingCardStack {
     
     mutating func drawTopCard() -> PlayingCard? {
         if countLessOne < 1 {return nil} else {
-            cards[countLessOne].isFaceUp = false
             return cards.remove(at: countLessOne)
         }
     }
     
     mutating func showTopCard() -> String? {
         if countLessOne < 1  {return nil} else {
-            cards[countLessOne].isFaceUp = true
             return cards.last!.description
         }
     }

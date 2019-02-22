@@ -18,24 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-Gx-a6h" customClass="PlayingCardView" customModule="Playing_Card" customModuleProvider="target">
-                                <rect key="frame" x="16" y="44" width="382" height="798"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-Gx-a6h" customClass="PlayingCardView" customModule="Playing_Card" customModuleProvider="target">
+                                <rect key="frame" x="16" y="147.5" width="382" height="611"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="800" id="80F-H1-aV0"/>
+                                    <constraint firstAttribute="width" secondItem="EdT-Gx-a6h" secondAttribute="height" multiplier="5:8" id="dmL-Or-xVW"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EdT-Gx-a6h" secondAttribute="bottom" constant="20" id="4mI-vc-YQo"/>
-                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5en-TU-2G3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EdT-Gx-a6h" secondAttribute="trailing" constant="16" id="iSB-de-7bP"/>
-                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n4p-cn-zrB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EdT-Gx-a6h" secondAttribute="bottom" constant="16" id="4mI-vc-YQo"/>
+                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5en-TU-2G3"/>
+                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="N14-V2-wGW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EdT-Gx-a6h" secondAttribute="trailing" constant="16" id="iSB-de-7bP"/>
+                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="n4p-cn-zrB"/>
+                            <constraint firstItem="EdT-Gx-a6h" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tac-fQ-OsN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.23188405797103" y="133.25892857142856"/>
         </scene>
     </scenes>
 </document>

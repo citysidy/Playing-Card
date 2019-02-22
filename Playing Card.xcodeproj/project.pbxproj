@@ -67,7 +67,6 @@
 				DEDAB00F2201295C00F927F6 /* Model */,
 				DEDAB0102201296700F927F6 /* View */,
 				DEDAB01122012F9700F927F6 /* Controller */,
-				DEDAAFFF21FFE21A00F927F6 /* Assets.xcassets */,
 				DEDAB00A21FFE22B00F927F6 /* Supporting Files */,
 				DEDAB00421FFE21A00F927F6 /* Info.plist */,
 			);
@@ -77,6 +76,7 @@
 		DEDAB00A21FFE22B00F927F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DEDAAFFF21FFE21A00F927F6 /* Assets.xcassets */,
 				DEDAB01422012FFB00F927F6 /* metronome.wav */,
 				DEDAAFF821FFE21900F927F6 /* AppDelegate.swift */,
 				DEDAB00121FFE21A00F927F6 /* LaunchScreen.storyboard */,

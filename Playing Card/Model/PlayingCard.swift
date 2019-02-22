@@ -16,9 +16,7 @@ struct PlayingCard: CustomStringConvertible {
     
     var suit: Suit
     var rank: Rank
-    
-    var isFaceUp = false
-    
+        
     enum Suit: String, CustomStringConvertible {
         
         var description: String {

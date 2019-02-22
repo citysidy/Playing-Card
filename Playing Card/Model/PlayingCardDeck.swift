@@ -18,7 +18,7 @@ struct PlayingCardDeck {
     init() {
         for suit in PlayingCard.Suit.all {
             for rank in PlayingCard.Rank.all {
-                cards.append(PlayingCard(suit: suit, rank: rank, isFaceUp: false))
+                cards.append(PlayingCard(suit: suit, rank: rank))
             }
         }
     }
@@ -31,7 +31,6 @@ struct PlayingCardDeck {
         if cards.count == 0 {return nil}
         return cards.remove(at: cards.count.shuffle)
     }
-    
     
 }
 
@@ -53,7 +52,6 @@ extension Int {
         else {return 0}
     }
     
-    
 }
 
 extension Sequence {
@@ -66,4 +64,5 @@ extension Sequence {
         }
         return validItems
     }
+    
 }
