@@ -8,10 +8,14 @@
 
 import UIKit
 
+@IBDesignable
 class PlayingCardView: UIView {
     
-    var rank: Int = 8 {didSet {setNeedsDisplay(); setNeedsLayout()}}
-    var suit: String = "♤" {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable
+    var rank: Int = 11 {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable
+    var suit: String = "♥︎" {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable
     var isFaceUp: Bool = true {didSet {setNeedsDisplay(); setNeedsLayout()}}
     
     private func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
@@ -19,7 +23,15 @@ class PlayingCardView: UIView {
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        return NSAttributedString(string: string, attributes: [.paragraphStyle:paragraphStyle, .font:font])
+        var color = UIColor.black
+        if suit == "♥︎" || suit == "♦︎" {
+            color = UIColor.red
+        }
+        var attributes: [NSAttributedString.Key : Any] = [:]
+        attributes[.paragraphStyle] = paragraphStyle
+        attributes[.font] = font
+        attributes[.foregroundColor] = color
+        return NSAttributedString(string: string, attributes: attributes)
     }
     
     private var cornerString: NSAttributedString {
@@ -102,11 +114,18 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedRect.fill()
         
-        if let faceCardImage = UIImage(named: rankString+suit) {
-            faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBounsSize))
+        if isFaceUp {
+            if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
+                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBounsSize))
+            } else {
+                drawPips()
+            }
         } else {
-            drawPips()
+            if let cardBackImage = UIImage(named: "cardBack", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
+                cardBackImage.draw(in: bounds)
+            }
         }
+        
     }
     
 }
