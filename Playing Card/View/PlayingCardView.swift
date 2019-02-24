@@ -12,11 +12,22 @@ import UIKit
 class PlayingCardView: UIView {
     
     @IBInspectable
-    var rank: Int = 11 {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    var rank: Int = 5 {didSet {setNeedsDisplay(); setNeedsLayout()}}
     @IBInspectable
     var suit: String = "♥︎" {didSet {setNeedsDisplay(); setNeedsLayout()}}
     @IBInspectable
     var isFaceUp: Bool = true {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    
+    var faceCardImageScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize {didSet {setNeedsDisplay()}}
+    
+    @objc func adjustFaceCardScale(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed,.ended:
+            faceCardImageScale += recognizer.scale
+            recognizer.scale = 1.0
+        default: break
+        }
+    }
     
     private func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
@@ -113,10 +124,9 @@ class PlayingCardView: UIView {
         roundedRect.addClip()
         UIColor.white.setFill()
         roundedRect.fill()
-        
         if isFaceUp {
             if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBounsSize))
+                faceCardImage.draw(in: bounds.zoom(by: faceCardImageScale))
             } else {
                 drawPips()
             }
@@ -125,8 +135,8 @@ class PlayingCardView: UIView {
                 cardBackImage.draw(in: bounds)
             }
         }
-        
     }
+    
     
 }
 
@@ -137,7 +147,7 @@ extension PlayingCardView {
         static let cornerFontSizeToBoundsHeight: CGFloat = 0.05
         static let cornerRadiusToBoundsHeight: CGFloat = 0.06
         static let cornerOffsetToCornerRadius: CGFloat = 0.33
-        static let faceCardImageSizeToBounsSize: CGFloat = 0.75
+        static let faceCardImageSizeToBoundsSize: CGFloat = 0.75
     }
     
     private var cornerRadius: CGFloat {
