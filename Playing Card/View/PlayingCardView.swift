@@ -12,11 +12,11 @@ import UIKit
 class PlayingCardView: UIView {
     
     @IBInspectable
-    var rank: Int = 5 {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    var rank: Int = 0 {didSet {setNeedsDisplay(); setNeedsLayout()}}
     @IBInspectable
-    var suit: String = "♥︎" {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    var suit: String = "♦︎" {didSet {setNeedsDisplay(); setNeedsLayout()}}
     @IBInspectable
-    var isFaceUp: Bool = true {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    var isFaceUp: Bool = false {didSet {setNeedsDisplay(); setNeedsLayout()}}
     
     var faceCardImageScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize {didSet {setNeedsDisplay()}}
     
@@ -105,6 +105,10 @@ class PlayingCardView: UIView {
         }
     }
     
+    private func drawFaceSuit() {
+        
+    }
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setNeedsLayout()
         setNeedsDisplay()
@@ -131,7 +135,7 @@ class PlayingCardView: UIView {
                 drawPips()
             }
         } else {
-            if let cardBackImage = UIImage(named: "cardBack", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
+            if let cardBackImage = UIImage(named: "cardBack" + "\(4.shuffle)", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 cardBackImage.draw(in: bounds)
             }
         }
@@ -210,3 +214,4 @@ extension CGPoint {
     }
     
 }
+

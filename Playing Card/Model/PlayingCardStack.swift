@@ -14,31 +14,22 @@ struct PlayingCardStack {
     /***************************************************************/
     
     var cards = [PlayingCard]()
+    
     var countLessOne: Int {
         return cards.count - 1
-    }
-    
-    var topCard: PlayingCard? {
-        if countLessOne >= 0 {
-            return cards.last
-        } else {return nil}
     }
     
     //MARK: - Methods
     /***************************************************************/
     
-    mutating func drawTopCard() -> PlayingCard? {
-        if countLessOne < 1 {return nil} else {
+    mutating func draw() -> PlayingCard? {
+        if cards.count == 0 {return nil} else {
             return cards.remove(at: countLessOne)
         }
     }
     
-    mutating func showTopCard() -> String? {
-        if countLessOne < 1  {return nil} else {
-            return cards.last!.description
-        }
+    mutating func discard(_ card: PlayingCard) {
+        cards.append(card)
     }
-    
-    
     
 }

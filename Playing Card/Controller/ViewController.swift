@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     /***************************************************************/
     
     var deck = PlayingCardDeck()
+    var stack = PlayingCardStack()
     
     
     //MARK: - IBOutlets and Actions
@@ -23,9 +24,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playingCardView: PlayingCardView! {
         didSet {
-            let swipe = UISwipeGestureRecognizer(target: self, action: #selector(nextCard))
-            swipe.direction = [.left,.right]
-            playingCardView.addGestureRecognizer(swipe)
+            let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(previousCard))
+            swipeLeft.direction = [.left]
+            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(nextCard))
+            swipeRight.direction = [.right]
+            playingCardView.addGestureRecognizer(swipeLeft)
+            playingCardView.addGestureRecognizer(swipeRight)
             let pinch = UIPinchGestureRecognizer(target: playingCardView, action: #selector(PlayingCardView.adjustFaceCardScale(byHandlingGestureRecognizedBy:)))
             playingCardView.addGestureRecognizer(pinch)
         }
@@ -49,6 +53,15 @@ class ViewController: UIViewController {
     }
     
     @objc func nextCard() {
+        print("Next Card")
+        if let card = deck.deal() {
+            playingCardView.rank = card.rank.order
+            playingCardView.suit = card.suit.rawValue
+        }
+    }
+    
+    @objc func previousCard() {
+        print("Previous Card")
         if let card = deck.deal() {
             playingCardView.rank = card.rank.order
             playingCardView.suit = card.suit.rawValue

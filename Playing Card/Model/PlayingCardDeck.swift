@@ -43,12 +43,10 @@ extension Int {
         if self > 0 {
             return +Int.random(in: 0 ..< +self)
         }
-        
         else
         if self < 0 {
             return -Int.random(in: 0 ..< -self)
         }
-        
         else {return 0}
     }
     
